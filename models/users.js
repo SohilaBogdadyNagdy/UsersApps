@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var UserModelSchema = new Schema({
+    id: Schema.Types.ObjectId,
     username: String,
     firstName: String,
     lastName: String,
@@ -11,4 +12,4 @@ var UserModelSchema = new Schema({
     avatar: String
 });
 
-var _model = mongoose.model('UsersModel', UserModelSchema );
+var _model = mongoose.model('Users', UserModelSchema );
