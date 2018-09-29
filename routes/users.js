@@ -5,6 +5,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get('/', function(req, res, next) {
   console.log("list users API");
+  users = users.find();
   res.json(users);
 });
 
