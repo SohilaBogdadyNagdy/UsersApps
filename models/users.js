@@ -5,11 +5,29 @@ var Schema = mongoose.Schema;
 
 var UserModelSchema = new Schema({
     id: Schema.Types.ObjectId,
-    username: String,
-    firstName: String,
-    lastName: String,
-    email: String,
-    avatar: String
+    username: {
+      type : String,
+      required : [true, "user name is already taken"],
+      unique: true
+    },
+    firstName: {
+       type: String,
+       required : true
+    },
+    lastName : {
+       type: String,
+       required : true
+    },
+    email: {
+      type: String,
+
+    },
+    avatar: String,
+    password:{
+       type: String,
+       minlength : 6
+    }
+
 });
 
 var _model = mongoose.model('Users', UserModelSchema );
